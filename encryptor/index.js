@@ -3,11 +3,20 @@ console.log('The encryptor js file loaded');
 const letteres = 'abcdefghijklmnopqrstuvwxyz';
 const encrypt_key = 'bcdefghijklmnopqrstuvwxyza';
 
-console.log(letteres[0]); // a
-for (let i = 1; i < 10; i++) {
-  console.log('loop: ' + i);
-  {
-for (let i = 0; i < letteres.length;; it++) {
-  console.log(letteres[i]);
+function encrypttext(text) {
+  let result = '';
+  
+  for (let i = 0; i < text.length; i++) {
+   let letter = text[i];
+    let letterIndex = letters.indexOf(letter);
+  
+    if (letterIndex < 0) {
+      result += letter;
+  }
+    
+    els{
+     result += encrypt_key[letterIndex]; 
+ }
 }
-
+return result;  
+}
