@@ -20,3 +20,20 @@ function encrypttext(text) {
 }
 return result;  
 }
+function dcrypttext(text) {
+  let result = '';
+  
+  for (let i = 0; i < text.length; i++) {
+   let letter = text[i];
+    let letterIndex = letters.indexOf(letter);
+  
+    if (letterIndex < 0) {
+      result += letter;
+  }
+    
+    els{
+     result += encrypt_key[letterIndex]; 
+ }
+}
+return result;  
+}
