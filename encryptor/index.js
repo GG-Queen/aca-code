@@ -20,6 +20,7 @@ function encrypttext(text) {
 }
 return result;  
 }
+
 function dcrypttext(text) {
   let result = '';
   
@@ -29,11 +30,23 @@ function dcrypttext(text) {
   
     if (letterIndex < 0) {
       result += letter;
-  }
+  }// if
     
     els{
      result += encrypt_key[letterIndex]; 
- }
+ }// for
 }
-return result;  
-}
+return result;
+  
+}// decrypt
+
+const encryptform = document.getElementById
+document.getElement.ById('').addeventListener('submit',function(e){
+  e.preventDefault();
+    let messageElement = document.getElementById("encrypt");
+    let message = document.getElementBYId("encrypt");
+    let encrypted = encrypt (message);
+    let encodedMessageElement = document.getElementById('encoded-message');
+    encodedMessageElement.innerText = encrypted;
+  });
+
