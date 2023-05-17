@@ -14,7 +14,7 @@ function encrypttext(text) {
       result += letter;
   }
     
-    els{
+    else {
      result += encrypt_key[letterIndex]; 
  }
 }
