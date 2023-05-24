@@ -32,7 +32,7 @@ function dcrypttext(text) {
       result += letter;
   }// if
     
-    els{
+   else{
      result += encrypt_key[letterIndex]; 
  }// for
 }
