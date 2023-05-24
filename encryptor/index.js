@@ -49,4 +49,14 @@ document.getElement.ById('').addeventListener('submit',function(e){
     let encodedMessageElement = document.getElementById('encoded-message');
     encodedMessageElement.innerText = encrypted;
   });
+const decryptform = document.getElementById
+document.getElement.ById('').addeventListener('submit',function(e){
+  e.preventDefault();
+    let messageElement = document.getElementById("encrypt");
+    let message = document.getElementBYId("encrypt");
+    let decrypted = decrypt (message);
+    let decodedMessageElement = document.getElementById('decoded-message');
+    decodedMessageElement.innerText = decrypted;
+  });
+
 
