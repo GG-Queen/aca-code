@@ -1,62 +1,82 @@
-console.log('The encryptor js file loaded');
+console.log('The encryptor js file loaded'); 
 
-const letteres = 'abcdefghijklmnopqrstuvwxyz!';
-const encrypt_key = 'bcdefghijklmnopqrstuvwxyza?';
+const letters = 'abcdefghijklmnopqrstuvwxyz';
+const encrypt_key = 'bcdefghijklmnopqrstuvwxyza';
 
-function encrypttext(text) {
+function encrypt(text) {
   let result = '';
   
   for (let i = 0; i < text.length; i++) {
-   let letter = text[i];
+    let letter = text[i];
     let letterIndex = letters.indexOf(letter);
-  
+    
     if (letterIndex < 0) {
       result += letter;
-  }
+    }// if
     
     else {
-     result += encrypt_key[letterIndex]; 
- }
-}
-return result;  
-}
+      result += encrypt_key[letterIndex]; 
+    }// else
+    
+  }// for
+  
+  return result;
+  
+}// encrypt
 
-function dcrypttext(text) {
+
+function decrypt(text) {
   let result = '';
   
   for (let i = 0; i < text.length; i++) {
-   let letter = text[i];
-    let letterIndex = letters.indexOf(letter);
-  
+    let letter = text[i];
+    let letterIndex = encrypt_key.indexOf(letter);
+    
     if (letterIndex < 0) {
       result += letter;
-  }// if
+    }// if
     
-   else{
-     result += encrypt_key[letterIndex]; 
-   }
-  }
+    else {
+      result += letters[letterIndex]; 
+    }// else
+    
+  }// for
+  
   return result;
   
 }// decrypt
 
-const encryptform = document.getElementById
-document.getElement.ById('').addeventListener('submit',function(e){
+// add event listener to the form
+const encryptForm = document.getElementById('encrypt-form');
+encryptForm.addEventListener('submit', function(e) {
   e.preventDefault();
-    let messageElement = document.getElementById("encrypt");
-    let message = document.getElementBYId("encrypt");
-    let encrypted = encrypt (message);
-    let encodedMessageElement = document.getElementById('encoded-message');
-    encodedMessageElement.innerText = encrypted;
-  });
-const decryptform = document.getElementById
-document.getElement.ById('').addeventListener('submit',function(e){
-  e.preventDefault();
-    let messageElement = document.getElementById("encrypt");
-    let message = document.getElementBYId("encrypt");
-    let decrypted = decrypt (message);
-    let decodedMessageElement = document.getElementById('decoded-message');
-    decodedMessageElement.innerText = decrypted;
-  });
+  
+  // get the value of the content
+  let messageElement = document.getElementById('encrypt');
+  let message = messageElement.value;
+  
+  // encrypt the content
+  let encrypted = encrypt(message);
+  
+  // display encrypted message in p element
+  let encodedMessageElement = document.getElementById('encoded-message');
+  encodedMessageElement.innerText = encrypted;
+});
 
 
+// add event listener to the decrypt form
+const decryptForm = document.getElementById('decrypt-form');
+decryptForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // get the value of the content
+  let messageElement = document.getElementById('decrypt');
+  let message = messageElement.value;
+  
+  // decrypt the content
+  let decrypted = decrypt(message);
+  
+  // display encrypted message in p element
+  let decodedMessageElement = document.getElementById('decoded-message');
+  decodedMessageElement.innerText = decrypted;
+});
