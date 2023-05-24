@@ -34,9 +34,9 @@ function dcrypttext(text) {
     
    else{
      result += encrypt_key[letterIndex]; 
- }// for
-}
-return result;
+   }
+  }
+  return result;
   
 }// decrypt
 
